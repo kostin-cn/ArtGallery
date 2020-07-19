@@ -1,0 +1,117 @@
+.blog-page {
+  padding: 0 0 100px;
+  min-height: 100vh;
+  .blogContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    .blogBlock {
+      width: 31%;
+      margin-right: 3.5%;
+      margin-bottom: 80px;
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      .img {
+        width: 100%;
+        padding-bottom: 66%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 0;
+      }
+      .title {
+        font-size: 32px;
+        font-weight: 500;
+      }
+      .desc {
+        font-size: 16px;
+      }
+      .date {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 500;
+        .read-more {
+          margin-left: 40px;
+          font-size: inherit;
+          &:after {
+            height: 3px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.articleContainer {
+  padding: 236px 0 100px;
+  margin: 0 auto;
+  max-width: 800px;
+  min-height: 100vh;
+  .date {
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+  .title {
+    margin-bottom: 27px;
+    h1 {
+      margin: 0;
+      padding-right: 60px;
+      font-size: 36px;
+      font-weight: 500;
+    }
+    .socials {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      @include translateY(-50%);
+      font-size: 24px;
+    }
+  }
+  .read-more {
+    font-size: 14px;
+    &:after {
+      height: 5px;
+    }
+  }
+  img {
+    max-width: 100%;
+  }
+  p {
+    margin: 0 0 20px;
+  }
+}
+
+
+@media screen {
+  @media (max-width: 960px) {
+    .blog-page {
+      .blogContainer {
+        .blogBlock {
+          width: 48%;
+          margin-right: 4%;
+          &:nth-child(3n) {
+            margin-right: 4%;
+          }
+          &:nth-child(2n) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .blog-page {
+      .blogContainer {
+        .blogBlock {
+          width: 100%;
+          margin-right: 0;
+          &:nth-child(3n) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

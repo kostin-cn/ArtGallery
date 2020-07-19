@@ -1,0 +1,89 @@
+.tariffs-page {
+  padding: 0 0 100px;
+  min-height: 100vh;
+  .page-title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    span:first-child {
+      margin-right: 0.25em;
+    }
+  }
+  .tariffsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    .tariffsBlock {
+      display: inline-block;
+      width: 28.33333%;
+      margin: 0 2.5% 5vw;
+      padding: 40px;
+      border: 1px solid $darkgray;
+      .period {
+        margin: 0 0 10px;
+        line-height: 1;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      .price {
+        margin: 0 0 10px;
+        line-height: 1;
+        font-size: 36px;
+        font-weight: 500;
+      }
+      .price_per_month {
+        font-weight: 500;
+        margin: 0 0 27px;
+        color: $darkgray;
+      }
+      .desc {
+        p {
+          margin: 0 0 20px;
+          color: $darkgray;
+          strong {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}
+.txtCenter {
+  text-align: center;
+}
+.block-btn {
+  padding: 20px 4.5vw;
+  border: 1px solid $black;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  @include transition();
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+}
+
+@media screen {
+  @media (max-width: 1200px) {
+    .tariffs-page {
+      .tariffsContainer {
+        .tariffsBlock {
+          width: 45%;
+        }
+      }
+    }
+  }
+  @media (max-width: 960px) {
+    .tariffs-page {
+      .tariffsContainer {
+        .tariffsBlock {
+          width: 95%;
+        }
+      }
+    }
+  }
+}

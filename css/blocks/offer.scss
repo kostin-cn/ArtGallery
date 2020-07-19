@@ -1,0 +1,144 @@
+.offer-page {
+  min-height: 100vh;
+  .headerBlock {
+    height: 37vw;
+    .headerText {
+      top: 43%;
+    }
+  }
+  .offerContainer {
+    max-width: 950px;
+    margin: 100px auto 100px;
+    #offer-form {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 14px;
+      #offerform-file {
+      }
+      .offer-btn {
+        width: 75%;
+        padding: 20px;
+        background-color: transparent;
+        border: 1px solid $black;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        @include transition();
+        &:hover {
+          background-color: $black;
+          color: $white;
+        }
+      }
+    }
+    .offerBlock {
+      width: 53%;
+      &.first {
+        width: 35%;
+      }
+    }
+  }
+}
+
+.form-group {
+  label {
+    font-weight: 500;
+  }
+  input[type="checkbox"], input[type="radio"] {
+    display: none;
+  }
+  &.required label.control-label:after {
+    content: " *";
+    color: red;
+  }
+  &.data-checkbox, .checkout_pay_input {
+    label {
+      padding-left: 35px;
+      cursor: pointer;
+      font-weight: normal;
+      &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+      }
+      &:before {
+        left: 0;
+        top: -2px;
+        width: 24px;
+        height: 24px;
+        border: 1px solid $black;
+        z-index: 2;
+      }
+      &:after {
+        left: 4px;
+        top: 2px;
+        width: 16px;
+        height: 16px;
+        background-color: $black;
+        opacity: 0;
+        z-index: 3;
+        @include transition();
+      }
+    }
+    input:checked + label:after {
+      opacity: 1;
+    }
+  }
+  .checkout_pay_input {
+    margin-top: 10px;
+  }
+  &.field-loginform-rememberme {
+    label {
+      &:before {
+        border-color: $white;
+      }
+      &:after {
+        background-color: $white;
+      }
+    }
+  }
+  &.btnsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    .btn-link {
+      margin-right: 10px;
+    }
+  }
+  .form-control {
+    border-radius: 0;
+    background-color: transparent;
+    color: inherit;
+
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  #rentform-tariff_id {
+    background-color: transparent;
+    display: block;
+    option {
+      background-color: $black;
+      &:hover {
+        background-color: $white;
+      }
+    }
+  }
+}
+
+
+@media screen {
+  @media (max-width: 960px) {
+    .offer-page {
+      .headerBlock {
+        height: 100vh;
+      }
+      .offerContainer {
+        .offerBlock {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+.headerBlock {
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 0;
+  .headerText {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    top: 50%;
+    color: $white;
+    h1 {
+      margin: 0 0 10px;
+      font-size: 60px;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+    .desc {
+      width: 95%;
+      max-width: 950px;
+      margin: 0 auto 10px;
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: 0.6px;
+      line-height: 1.2;
+    }
+  }
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+.aboutContainer {
+  padding: 100px 0 65px;
+  margin: 0 auto;
+  max-width: 1200px;
+  .aboutBlock {
+    display: flex;
+    padding-bottom: 200px;
+    flex-direction: row;
+    align-items: flex-start;
+    .text {
+      width: 40%;
+      padding: 0 60px 0 0;
+      @include transition(1.2s, 0.3s);
+      .sub-title {
+        margin: 0;
+        color: $darkgray;
+        text-transform: uppercase;
+        font-size: 24px;
+      }
+      .title {
+        font-size: 36px;
+        font-weight: 500;
+        margin: 0 0 27px;
+      }
+      .aboutButtons {
+        display: none;
+        a {
+          display: inline-block;
+          padding: 20px 35px;
+          margin: 20px 20px 20px 0;
+          border: 1px solid $black;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 500;
+          @include transition();
+          &:hover {
+            background-color: $black;
+            color: $white;
+          }
+        }
+      }
+    }
+    img {
+      width: 60%;
+    }
+    &:nth-child(2n) {
+      flex-direction: row-reverse;
+      .text {
+        padding: 0 0 0 60px;
+      }
+    }
+    &:last-child {
+      .text {
+        width: 60%;
+        padding: 0 0 0 120px;
+        .aboutButtons {
+          display: block;
+        }
+      }
+      img {
+        width: 40%;
+      }
+    }
+  }
+}
+
+@media screen {
+  @media (max-width: 960px) {
+    .headerBlock {
+      .headerText {
+        h1 {
+          font-size: 48px;
+        }
+        .desc {
+          font-size: 24px;
+        }
+        @media (orientation: landscape) {
+          h1 {
+            font-size: 36px;
+          }
+          .desc {
+            font-size: 18px;
+          }
+        }
+        @media (max-width: 500px) {
+          h1 {
+            font-size: 36px;
+          }
+          .desc {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+    .aboutContainer {
+      .aboutBlock {
+        padding-bottom: 100px;
+        flex-direction: column !important;
+        .text {
+          width: 100% !important;
+          padding: 0 0 60px !important;
+        }
+        img {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
